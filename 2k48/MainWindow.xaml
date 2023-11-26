@@ -8,14 +8,14 @@
         Title="2048" Height="600" Width="600" MinHeight="300" MinWidth="250" KeyDown="Movement" Closed="HS_Check">
     <Window.Resources>
         <ControlTemplate x:Key="plt" TargetType="{x:Type Label}">
-            <Border BorderThickness="1" CornerRadius="10" Margin="5" Background="LightGray" >
+            <Border BorderThickness="1" CornerRadius="10" Margin="5" Background="#cdc1b3" >
                 <Grid>
                     <ContentPresenter></ContentPresenter>
                 </Grid>
             </Border>
         </ControlTemplate>
     </Window.Resources>
-    <Grid Background="PaleGoldenrod">
+    <Grid Background="#fbf8ef">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"></RowDefinition>
             <RowDefinition Height="Auto"></RowDefinition>
@@ -30,28 +30,28 @@
                 <ColumnDefinition Width="96*"/>
                 <ColumnDefinition Width="125*" ></ColumnDefinition>
             </Grid.ColumnDefinitions>
-            <Border  Margin="25,20,5,5" Background="Gray" BorderThickness="1" CornerRadius="10" Grid.ColumnSpan="2"  >
+            <Border  Margin="25,20,5,5" Background="#baaea0" BorderThickness="1" CornerRadius="10" Grid.ColumnSpan="2"  >
                 <Grid>
                     <Grid.RowDefinitions>
                         <RowDefinition></RowDefinition>
                         <RowDefinition></RowDefinition>
                     </Grid.RowDefinitions>
-                    <TextBlock TextAlignment="Center" Margin="5" Foreground="LightGray" FontSize="18">Score</TextBlock>
+                    <TextBlock TextAlignment="Center" Margin="5" Foreground="#6d6960" FontSize="18">Score</TextBlock>
                     <TextBlock Name ="Score" Grid.Row="1" TextAlignment="Center" Margin="2" Foreground="White" FontSize="18" Text="0"></TextBlock>
                 </Grid>
             </Border>
-            <Border Grid.Column="2" Margin="5,20,25,5" Background="Gray" BorderThickness="1" CornerRadius="10" >
+            <Border Grid.Column="2" Margin="5,20,25,5" Background="#baaea0" BorderThickness="1" CornerRadius="10" >
                 <Grid >
                     <Grid.RowDefinitions>
                         <RowDefinition></RowDefinition>
                         <RowDefinition></RowDefinition>
                     </Grid.RowDefinitions>
-                    <TextBlock TextAlignment="Center" Margin="5" Foreground="LightGray" FontSize="18">High Score</TextBlock>
+                    <TextBlock TextAlignment="Center" Margin="5" Foreground="#6d6960" FontSize="18">High Score</TextBlock>
                     <TextBlock Name="highscore" Grid.Row="1" TextAlignment="Center" Margin="2" Foreground="White" FontSize="18">0</TextBlock>
                 </Grid>
             </Border>
         </Grid>
-        <Border Grid.Row="2" Margin="25,5,25,10" Background="Gray" BorderThickness="1" CornerRadius="10" >
+        <Border Grid.Row="2" Margin="25,5,25,10" Background="#baaea0" BorderThickness="1" CornerRadius="30" >
             <Grid Grid.Row="1" Margin="5">
                 <Grid>
                     <Grid.ColumnDefinitions>

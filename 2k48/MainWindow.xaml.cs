@@ -18,9 +18,6 @@ using static System.Net.Mime.MediaTypeNames;
 
 namespace _2k48
 {
-    /// <summary>
-    /// Interaction logic for MainWindow.xaml
-    /// </summary>
     public partial class MainWindow : Window
     {
         Label[,] field;
@@ -54,7 +51,7 @@ namespace _2k48
         {
             ControlTemplate plt4 = new ControlTemplate(typeof(Label));
             FrameworkElementFactory border = new FrameworkElementFactory(typeof(Border));
-            border.SetValue(Border.BackgroundProperty, Brushes.Orange);
+            border.SetValue(Border.BackgroundProperty, new SolidColorBrush(Color.FromArgb(238, 224, 198,1)));
             border.SetValue(Border.CornerRadiusProperty, new CornerRadius(10));
             FrameworkElementFactory grid = new FrameworkElementFactory(typeof(Grid));
             FrameworkElementFactory contentPresenter = new FrameworkElementFactory(typeof(ContentPresenter));
@@ -74,7 +71,10 @@ namespace _2k48
         {
             ControlTemplate plt8 = new ControlTemplate(typeof(Label));
             FrameworkElementFactory border = new FrameworkElementFactory(typeof(Border));
-            border.SetValue(Border.BackgroundProperty, Brushes.DarkOrange);
+
+            // Set the background color to #f5b174
+            border.SetValue(Border.BackgroundProperty, new SolidColorBrush(Color.FromRgb(0xf5, 0xb1, 0x74)));
+
             border.SetValue(Border.CornerRadiusProperty, new CornerRadius(10));
             FrameworkElementFactory grid = new FrameworkElementFactory(typeof(Grid));
             FrameworkElementFactory contentPresenter = new FrameworkElementFactory(typeof(ContentPresenter));
@@ -94,7 +94,10 @@ namespace _2k48
         {
             ControlTemplate plt4 = new ControlTemplate(typeof(Label));
             FrameworkElementFactory border = new FrameworkElementFactory(typeof(Border));
-            border.SetValue(Border.BackgroundProperty, Brushes.Red);
+
+            // Set the background color to #f59563
+            border.SetValue(Border.BackgroundProperty, new SolidColorBrush(Color.FromRgb(0xf5, 0x95, 0x63)));
+
             border.SetValue(Border.CornerRadiusProperty, new CornerRadius(10));
             FrameworkElementFactory grid = new FrameworkElementFactory(typeof(Grid));
             FrameworkElementFactory contentPresenter = new FrameworkElementFactory(typeof(ContentPresenter));
@@ -114,7 +117,10 @@ namespace _2k48
         {
             ControlTemplate plt4 = new ControlTemplate(typeof(Label));
             FrameworkElementFactory border = new FrameworkElementFactory(typeof(Border));
-            border.SetValue(Border.BackgroundProperty, Brushes.Green);
+
+            // Set the background color to #f67c5f
+            border.SetValue(Border.BackgroundProperty, new SolidColorBrush(Color.FromRgb(0xf6, 0x7c, 0x5f)));
+
             border.SetValue(Border.CornerRadiusProperty, new CornerRadius(10));
             FrameworkElementFactory grid = new FrameworkElementFactory(typeof(Grid));
             FrameworkElementFactory contentPresenter = new FrameworkElementFactory(typeof(ContentPresenter));
@@ -134,7 +140,10 @@ namespace _2k48
         {
             ControlTemplate plt4 = new ControlTemplate(typeof(Label));
             FrameworkElementFactory border = new FrameworkElementFactory(typeof(Border));
-            border.SetValue(Border.BackgroundProperty, Brushes.DarkGreen);
+
+            // Set the background color to #f65e3b
+            border.SetValue(Border.BackgroundProperty, new SolidColorBrush(Color.FromRgb(0xf6, 0x5e, 0x3b)));
+
             border.SetValue(Border.CornerRadiusProperty, new CornerRadius(10));
             FrameworkElementFactory grid = new FrameworkElementFactory(typeof(Grid));
             FrameworkElementFactory contentPresenter = new FrameworkElementFactory(typeof(ContentPresenter));
@@ -154,7 +163,10 @@ namespace _2k48
         {
             ControlTemplate plt4 = new ControlTemplate(typeof(Label));
             FrameworkElementFactory border = new FrameworkElementFactory(typeof(Border));
-            border.SetValue(Border.BackgroundProperty, Brushes.Blue);
+
+            // Set the background color to #edcf72
+            border.SetValue(Border.BackgroundProperty, new SolidColorBrush(Color.FromRgb(0xed, 0xcf, 0x72)));
+
             border.SetValue(Border.CornerRadiusProperty, new CornerRadius(10));
             FrameworkElementFactory grid = new FrameworkElementFactory(typeof(Grid));
             FrameworkElementFactory contentPresenter = new FrameworkElementFactory(typeof(ContentPresenter));
@@ -172,9 +184,13 @@ namespace _2k48
         }
         private Label Label256()
         {
+
             ControlTemplate plt4 = new ControlTemplate(typeof(Label));
             FrameworkElementFactory border = new FrameworkElementFactory(typeof(Border));
-            border.SetValue(Border.BackgroundProperty, Brushes.DarkBlue);
+
+            // Set the background color to #edcc61
+            border.SetValue(Border.BackgroundProperty, new SolidColorBrush(Color.FromRgb(0xed, 0xcc, 0x61)));
+
             border.SetValue(Border.CornerRadiusProperty, new CornerRadius(10));
             FrameworkElementFactory grid = new FrameworkElementFactory(typeof(Grid));
             FrameworkElementFactory contentPresenter = new FrameworkElementFactory(typeof(ContentPresenter));
@@ -194,7 +210,10 @@ namespace _2k48
         {
             ControlTemplate plt4 = new ControlTemplate(typeof(Label));
             FrameworkElementFactory border = new FrameworkElementFactory(typeof(Border));
-            border.SetValue(Border.BackgroundProperty, Brushes.Purple);
+
+            // Set the background color to #ecc850
+            border.SetValue(Border.BackgroundProperty, new SolidColorBrush(Color.FromRgb(0xec, 0xc8, 0x50)));
+
             border.SetValue(Border.CornerRadiusProperty, new CornerRadius(10));
             FrameworkElementFactory grid = new FrameworkElementFactory(typeof(Grid));
             FrameworkElementFactory contentPresenter = new FrameworkElementFactory(typeof(ContentPresenter));
@@ -214,7 +233,10 @@ namespace _2k48
         {
             ControlTemplate plt4 = new ControlTemplate(typeof(Label));
             FrameworkElementFactory border = new FrameworkElementFactory(typeof(Border));
-            border.SetValue(Border.BackgroundProperty, Brushes.DarkViolet);
+
+            // Set the background color to #efc53f
+            border.SetValue(Border.BackgroundProperty, new SolidColorBrush(Color.FromRgb(0xef, 0xc5, 0x3f)));
+
             border.SetValue(Border.CornerRadiusProperty, new CornerRadius(10));
             FrameworkElementFactory grid = new FrameworkElementFactory(typeof(Grid));
             FrameworkElementFactory contentPresenter = new FrameworkElementFactory(typeof(ContentPresenter));
@@ -234,7 +256,10 @@ namespace _2k48
         {
             ControlTemplate plt4 = new ControlTemplate(typeof(Label));
             FrameworkElementFactory border = new FrameworkElementFactory(typeof(Border));
-            border.SetValue(Border.BackgroundProperty, Brushes.Gold);
+
+            // Set the background color to #eec12e
+            border.SetValue(Border.BackgroundProperty, new SolidColorBrush(Color.FromRgb(0xee, 0xc1, 0x2e)));
+
             border.SetValue(Border.CornerRadiusProperty, new CornerRadius(10));
             FrameworkElementFactory grid = new FrameworkElementFactory(typeof(Grid));
             FrameworkElementFactory contentPresenter = new FrameworkElementFactory(typeof(ContentPresenter));
