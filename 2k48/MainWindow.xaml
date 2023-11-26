@@ -7,84 +7,80 @@
         mc:Ignorable="d"
         Title="2048" Height="800" Width="800" MinHeight="400" MinWidth="400" KeyDown="Movement" Closed="HS_Check">
     <Window.Resources>
-        <ControlTemplate x:Key="plt" TargetType="{x:Type Label}">
-            <Border BorderThickness="1" CornerRadius="10" Margin="5" Background="#cdc1b3" >
+        <ControlTemplate x:Key="label_style" TargetType="{x:Type Label}">
+            <Border BorderThickness="1" CornerRadius="10" Margin="5" Background="#cdc1b3">
                 <Grid>
-                    <ContentPresenter></ContentPresenter>
+                    <ContentPresenter />
                 </Grid>
             </Border>
         </ControlTemplate>
     </Window.Resources>
     <Grid Background="#fbf8ef">
         <Grid.RowDefinitions>
-            <RowDefinition Height="Auto"></RowDefinition>
-            <RowDefinition Height="Auto"></RowDefinition>
-            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="0.15*" />
+            <RowDefinition Height="*" />
         </Grid.RowDefinitions>
+
         <Menu>
-            <MenuItem Header="New Game" Click="Restart" FontSize="12" Background="White" Foreground="Black"></MenuItem>
+            <MenuItem Header="New Game" Click="Restart" FontSize="12" Background="White" Foreground="Black" />
         </Menu>
-        <Grid Grid.Row="1">
+
+        <Grid Grid.Row="1" Margin="5,20,5,5">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="1*"></ColumnDefinition>
-                <ColumnDefinition Width="3*"></ColumnDefinition>
-                <ColumnDefinition Width="4*"></ColumnDefinition>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="3*" />
+                <ColumnDefinition Width="4*" />
             </Grid.ColumnDefinitions>
-            <Border  Margin="25,20,5,5" Background="#baaea0" BorderThickness="1" CornerRadius="10" Grid.ColumnSpan="2"  >
+
+            <Border Background="#baaea0" BorderThickness="1" CornerRadius="10" Grid.ColumnSpan="2">
                 <Grid>
-                    <Grid.RowDefinitions>
-                        <RowDefinition></RowDefinition>
-                        <RowDefinition></RowDefinition>
-                    </Grid.RowDefinitions>
-                    <TextBlock TextAlignment="Center" Margin="5" Foreground="#6d6960" FontSize="18">Score</TextBlock>
-                    <TextBlock Name ="Score" Grid.Row="1" TextAlignment="Center" Margin="2" Foreground="White" FontSize="18" Text="0"></TextBlock>
+                    <TextBlock TextAlignment="Center" Margin="5" Foreground="#6d6960" FontSize="18">Current Score</TextBlock>
+                    <TextBlock Name="Score" TextAlignment="Center" Margin="2,36,2,2" Foreground="White" FontSize="18" Text="0" />
                 </Grid>
             </Border>
-            <Border Grid.Column="2" Margin="5,20,25,5" Background="#baaea0" BorderThickness="1" CornerRadius="10" >
-                <Grid >
-                    <Grid.RowDefinitions>
-                        <RowDefinition></RowDefinition>
-                        <RowDefinition></RowDefinition>
-                    </Grid.RowDefinitions>
+
+            <Border Grid.Column="2" Background="#baaea0" BorderThickness="1" CornerRadius="10" Margin="5,0">
+                <Grid>
                     <TextBlock TextAlignment="Center" Margin="5" Foreground="#6d6960" FontSize="18">High Score</TextBlock>
-                    <TextBlock Name="highscore" Grid.Row="1" TextAlignment="Center" Margin="2" Foreground="White" FontSize="18">0</TextBlock>
+                    <TextBlock Name="highscore" TextAlignment="Center" Margin="2,36,2,2" Foreground="White" FontSize="18">0</TextBlock>
                 </Grid>
             </Border>
         </Grid>
-        <Border Grid.Row="2" Margin="25,5,25,10" Background="#baaea0" BorderThickness="1" CornerRadius="30" >
-            <Grid Grid.Row="1" Margin="5">
-                <Grid>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition></ColumnDefinition>
-                        <ColumnDefinition></ColumnDefinition>
-                        <ColumnDefinition></ColumnDefinition>
-                        <ColumnDefinition></ColumnDefinition>
-                    </Grid.ColumnDefinitions>
-                    <Grid.RowDefinitions>
-                        <RowDefinition></RowDefinition>
-                        <RowDefinition></RowDefinition>
-                        <RowDefinition></RowDefinition>
-                        <RowDefinition></RowDefinition>
-                    </Grid.RowDefinitions>
-                    <Label Name="b00" Grid.Column="0" Grid.Row="0" Template="{StaticResource plt}"></Label>
-                    <Label Name="b10" Grid.Column="1" Grid.Row="0" Template="{StaticResource plt}"></Label>
-                    <Label Name="b20" Grid.Column="2" Grid.Row="0" Template="{StaticResource plt}"></Label>
-                    <Label Name="b30" Grid.Column="3" Grid.Row="0" Template="{StaticResource plt}"></Label>
-                    <Label Name="b01" Grid.Column="0" Grid.Row="1" Template="{StaticResource plt}"></Label>
-                    <Label Name="b11" Grid.Column="1" Grid.Row="1" Template="{StaticResource plt}"></Label>
-                    <Label Name="b21" Grid.Column="2" Grid.Row="1" Template="{StaticResource plt}"></Label>
-                    <Label Name="b31" Grid.Column="3" Grid.Row="1" Template="{StaticResource plt}"></Label>
-                    <Label Name="b02" Grid.Column="0" Grid.Row="2" Template="{StaticResource plt}"></Label>
-                    <Label Name="b12" Grid.Column="1" Grid.Row="2" Template="{StaticResource plt}"></Label>
-                    <Label Name="b22" Grid.Column="2" Grid.Row="2" Template="{StaticResource plt}"></Label>
-                    <Label Name="b32" Grid.Column="3" Grid.Row="2" Template="{StaticResource plt}"></Label>
-                    <Label Name="b03" Grid.Column="0" Grid.Row="3" Template="{StaticResource plt}"></Label>
-                    <Label Name="b13" Grid.Column="1" Grid.Row="3" Template="{StaticResource plt}"></Label>
-                    <Label Name="b23" Grid.Column="2" Grid.Row="3" Template="{StaticResource plt}"></Label>
-                    <Label Name="b33" Grid.Column="3" Grid.Row="3" Template="{StaticResource plt}"></Label>
-                </Grid>
+
+        <Border Grid.Row="2" Margin="25,5,25,10" Background="#baaea0" BorderThickness="1" CornerRadius="30">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+
+                <Grid.RowDefinitions>
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+
+                <Label Name="b00" Grid.Column="0" Grid.Row="0" Template="{StaticResource label_style}"></Label>
+                <Label Name="b10" Grid.Column="1" Grid.Row="0" Template="{StaticResource label_style}"></Label>
+                <Label Name="b20" Grid.Column="2" Grid.Row="0" Template="{StaticResource label_style}"></Label>
+                <Label Name="b30" Grid.Column="3" Grid.Row="0" Template="{StaticResource label_style}"></Label>
+                <Label Name="b01" Grid.Column="0" Grid.Row="1" Template="{StaticResource label_style}"></Label>
+                <Label Name="b11" Grid.Column="1" Grid.Row="1" Template="{StaticResource label_style}"></Label>
+                <Label Name="b21" Grid.Column="2" Grid.Row="1" Template="{StaticResource label_style}"></Label>
+                <Label Name="b31" Grid.Column="3" Grid.Row="1" Template="{StaticResource label_style}"></Label>
+                <Label Name="b02" Grid.Column="0" Grid.Row="2" Template="{StaticResource label_style}"></Label>
+                <Label Name="b12" Grid.Column="1" Grid.Row="2" Template="{StaticResource label_style}"></Label>
+                <Label Name="b22" Grid.Column="2" Grid.Row="2" Template="{StaticResource label_style}"></Label>
+                <Label Name="b32" Grid.Column="3" Grid.Row="2" Template="{StaticResource label_style}"></Label>
+                <Label Name="b03" Grid.Column="0" Grid.Row="3" Template="{StaticResource label_style}"></Label>
+                <Label Name="b13" Grid.Column="1" Grid.Row="3" Template="{StaticResource label_style}"></Label>
+                <Label Name="b23" Grid.Column="2" Grid.Row="3" Template="{StaticResource label_style}"></Label>
+                <Label Name="b33" Grid.Column="3" Grid.Row="3" Template="{StaticResource label_style}"></Label>
             </Grid>
         </Border>
     </Grid>
 </Window>
-
