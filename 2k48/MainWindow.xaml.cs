@@ -1,20 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Security.AccessControl;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
-using static System.Net.Mime.MediaTypeNames;
+
 
 namespace _2k48
 {
@@ -33,6 +24,35 @@ namespace _2k48
             labels = new Label[4, 4];
             InitField();
             SpawnLabel();
+        }
+        private void Restart(object sender, RoutedEventArgs e)
+        {
+            for (int i = 0; i < 4; i++)
+            {
+                for (int j = 0; j < 4; j++)
+                {
+                    labels[i, j].Content = null;
+                }
+            }
+            SpawnLabel();
+            Score.Text = "0";
+        }
+
+        private void Help(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("Use WASD to move! Try to get the biggest score in the universe", "HELP");
+        }
+
+        private void HS_Check(object sender, EventArgs e)
+        {
+            if (Convert.ToInt32(highscore.Text) > Convert.ToInt32(readscore))
+            {
+                using (StreamWriter sw = new StreamWriter("highscore.txt", false))
+                {
+                    readscore = highscore.Text;
+                    sw.Write(readscore);
+                }
+            }
         }
 
         private void InitField()
@@ -643,34 +663,7 @@ namespace _2k48
             }
         }
 
-        private void HS_Check(object sender, EventArgs e)
-        {
-            if (Convert.ToInt32(highscore.Text) > Convert.ToInt32(readscore))
-            {
-                using (StreamWriter sw = new StreamWriter("highscore.txt", false))
-                {
-                    readscore = highscore.Text;
-                    sw.Write(readscore);
-                }
-            }
-        }
 
-        private void Restart(object sender, RoutedEventArgs e)
-        {
-            for (int i = 0; i < 4; i++)
-            {
-                for (int j = 0; j < 4; j++)
-                {
-                    labels[i, j].Content = null;
-                }
-            }
-            SpawnLabel();
-            Score.Text = "0";
-        }
-
-        private void Help(object sender, RoutedEventArgs e)
-        {
-            MessageBox.Show("Use WASD to move! Try to get the biggest score in the universe", "HELP");
-        }
+       
     }
 }
