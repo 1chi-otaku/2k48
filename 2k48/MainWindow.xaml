@@ -64,22 +64,22 @@
                     <RowDefinition />
                 </Grid.RowDefinitions>
 
-                <Label Name="b00" Grid.Column="0" Grid.Row="0" Template="{StaticResource label_style}"></Label>
-                <Label Name="b10" Grid.Column="1" Grid.Row="0" Template="{StaticResource label_style}"></Label>
-                <Label Name="b20" Grid.Column="2" Grid.Row="0" Template="{StaticResource label_style}"></Label>
-                <Label Name="b30" Grid.Column="3" Grid.Row="0" Template="{StaticResource label_style}"></Label>
-                <Label Name="b01" Grid.Column="0" Grid.Row="1" Template="{StaticResource label_style}"></Label>
-                <Label Name="b11" Grid.Column="1" Grid.Row="1" Template="{StaticResource label_style}"></Label>
-                <Label Name="b21" Grid.Column="2" Grid.Row="1" Template="{StaticResource label_style}"></Label>
-                <Label Name="b31" Grid.Column="3" Grid.Row="1" Template="{StaticResource label_style}"></Label>
-                <Label Name="b02" Grid.Column="0" Grid.Row="2" Template="{StaticResource label_style}"></Label>
-                <Label Name="b12" Grid.Column="1" Grid.Row="2" Template="{StaticResource label_style}"></Label>
-                <Label Name="b22" Grid.Column="2" Grid.Row="2" Template="{StaticResource label_style}"></Label>
-                <Label Name="b32" Grid.Column="3" Grid.Row="2" Template="{StaticResource label_style}"></Label>
-                <Label Name="b03" Grid.Column="0" Grid.Row="3" Template="{StaticResource label_style}"></Label>
-                <Label Name="b13" Grid.Column="1" Grid.Row="3" Template="{StaticResource label_style}"></Label>
-                <Label Name="b23" Grid.Column="2" Grid.Row="3" Template="{StaticResource label_style}"></Label>
-                <Label Name="b33" Grid.Column="3" Grid.Row="3" Template="{StaticResource label_style}"></Label>
+                <Label Name="label00" Grid.Column="0" Grid.Row="0" Template="{StaticResource label_style}"></Label>
+                <Label Name="label10" Grid.Column="1" Grid.Row="0" Template="{StaticResource label_style}"></Label>
+                <Label Name="label20" Grid.Column="2" Grid.Row="0" Template="{StaticResource label_style}"></Label>
+                <Label Name="label30" Grid.Column="3" Grid.Row="0" Template="{StaticResource label_style}"></Label>
+                <Label Name="label01" Grid.Column="0" Grid.Row="1" Template="{StaticResource label_style}"></Label>
+                <Label Name="label11" Grid.Column="1" Grid.Row="1" Template="{StaticResource label_style}"></Label>
+                <Label Name="label21" Grid.Column="2" Grid.Row="1" Template="{StaticResource label_style}"></Label>
+                <Label Name="label31" Grid.Column="3" Grid.Row="1" Template="{StaticResource label_style}"></Label>
+                <Label Name="label02" Grid.Column="0" Grid.Row="2" Template="{StaticResource label_style}"></Label>
+                <Label Name="label12" Grid.Column="1" Grid.Row="2" Template="{StaticResource label_style}"></Label>
+                <Label Name="label22" Grid.Column="2" Grid.Row="2" Template="{StaticResource label_style}"></Label>
+                <Label Name="label32" Grid.Column="3" Grid.Row="2" Template="{StaticResource label_style}"></Label>
+                <Label Name="label03" Grid.Column="0" Grid.Row="3" Template="{StaticResource label_style}"></Label>
+                <Label Name="label13" Grid.Column="1" Grid.Row="3" Template="{StaticResource label_style}"></Label>
+                <Label Name="label23" Grid.Column="2" Grid.Row="3" Template="{StaticResource label_style}"></Label>
+                <Label Name="label33" Grid.Column="3" Grid.Row="3" Template="{StaticResource label_style}"></Label>
             </Grid>
         </Border>
     </Grid>

@@ -41,7 +41,7 @@ namespace _2k48
             {
                 for (int j = 0; j < 4; j++)
                 {
-                    string labelName = "b" + j + i;
+                    string labelName = "label" + j + i;
                     Label label = FindName(labelName) as Label;
                     field[i, j] = label;
                 }
