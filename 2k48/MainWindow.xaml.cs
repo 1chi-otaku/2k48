@@ -20,7 +20,7 @@ namespace _2k48
 {
     public partial class MainWindow : Window
     {
-        Label[,] field;
+        Label[,] labels;
         string hs;
         public MainWindow()
         {
@@ -30,7 +30,7 @@ namespace _2k48
                 hs = filestream.ReadToEnd();
                 highscore.Text = hs;
             }
-            field = new Label[4, 4];
+            labels = new Label[4, 4];
             InitField();
             SpawnLabel();
         }
@@ -43,7 +43,7 @@ namespace _2k48
                 {
                     string labelName = "label" + j + i;
                     Label label = FindName(labelName) as Label;
-                    field[i, j] = label;
+                    labels[i, j] = label;
                 }
             }
         }
@@ -281,7 +281,7 @@ namespace _2k48
             {
                 for (int j = 0; j < 4; j++)
                 {
-                    if (field[i, j].Content == null)
+                    if (labels[i, j].Content == null)
                     {
                         return true;
                     }
@@ -320,9 +320,9 @@ namespace _2k48
                 {
                     int i = rnd.Next(0, 4);
                     int j = rnd.Next(0, 4);
-                    if (field[i, j].Content == null)
+                    if (labels[i, j].Content == null)
                     {
-                        field[i, j].Content = label;
+                        labels[i, j].Content = label;
                         break;
                     }
                 }
@@ -350,9 +350,9 @@ namespace _2k48
                 {
                     int i = rnd.Next(0, 4);
                     int j = rnd.Next(0, 4);
-                    if (field[i, j].Content == null)
+                    if (labels[i, j].Content == null)
                     {
-                        field[i, j].Content = label;
+                        labels[i, j].Content = label;
                         break;
                     }
                 }
@@ -366,13 +366,13 @@ namespace _2k48
                 {
                     for (int j = 0; j < 4; j++)
                     {
-                        if (field[i, j].Content != null)
+                        if (labels[i, j].Content != null)
                         {
-                            if (j + 1 < 4 && field[i, j + 1].Content != null)
+                            if (j + 1 < 4 && labels[i, j + 1].Content != null)
                             {
-                                if (field[i, j + 1].Content.ToString() == field[i, j].Content.ToString())
+                                if (labels[i, j + 1].Content.ToString() == labels[i, j].Content.ToString())
                                 {
-                                    string content = (field[i, j].Content as Label)?.Content.ToString();
+                                    string content = (labels[i, j].Content as Label)?.Content.ToString();
                                     if (!string.IsNullOrEmpty(content) && int.TryParse(content, out int value))
                                     {
                                         int newValue = value * 2;
@@ -381,39 +381,39 @@ namespace _2k48
                                         switch (newValue)
                                         {
                                             case 4:
-                                                field[i, j + 1].Content = Label4();
+                                                labels[i, j + 1].Content = Label4();
                                                 break;
                                             case 8:
-                                                field[i, j + 1].Content = Label8();
+                                                labels[i, j + 1].Content = Label8();
                                                 break;
                                             case 16:
-                                                field[i, j + 1].Content = Label16();
+                                                labels[i, j + 1].Content = Label16();
                                                 break;
                                             case 32:
-                                                field[i, j + 1].Content = Label32();
+                                                labels[i, j + 1].Content = Label32();
                                                 break;
                                             case 64:
-                                                field[i, j + 1].Content = Label64();
+                                                labels[i, j + 1].Content = Label64();
                                                 break;
                                             case 128:
-                                                field[i, j + 1].Content = Label128();
+                                                labels[i, j + 1].Content = Label128();
                                                 break;
                                             case 256:
-                                                field[i, j + 1].Content = Label256();
+                                                labels[i, j + 1].Content = Label256();
                                                 break;
                                             case 512:
-                                                field[i, j + 1].Content = Label512();
+                                                labels[i, j + 1].Content = Label512();
                                                 break;
                                             case 1024:
-                                                field[i, j + 1].Content = Label1024();
+                                                labels[i, j + 1].Content = Label1024();
                                                 break;
                                             case 2048:
-                                                field[i, j + 1].Content = Label2048();
+                                                labels[i, j + 1].Content = Label2048();
                                                 break;
                                             default:
                                                 break;
                                         }
-                                        field[i, j].Content = null;
+                                        labels[i, j].Content = null;
                                     }
 
                                 }
@@ -421,8 +421,8 @@ namespace _2k48
                             }
                             if (j + 1 < 4)
                             {
-                                field[i, j + 1].Content = field[i, j].Content;
-                                field[i, j].Content = null;
+                                labels[i, j + 1].Content = labels[i, j].Content;
+                                labels[i, j].Content = null;
                                 continue;
                             }
                         }
@@ -435,13 +435,13 @@ namespace _2k48
                 {
                     for (int j = 0; j < 4; j++)
                     {
-                        if (field[i, j].Content != null)
+                        if (labels[i, j].Content != null)
                         {
-                            if (i + 1 < 4 && field[i + 1, j].Content != null)
+                            if (i + 1 < 4 && labels[i + 1, j].Content != null)
                             {
-                                if (field[i + 1, j].Content.ToString() == field[i, j].Content.ToString())
+                                if (labels[i + 1, j].Content.ToString() == labels[i, j].Content.ToString())
                                 {
-                                    string content = (field[i, j].Content as Label)?.Content.ToString();
+                                    string content = (labels[i, j].Content as Label)?.Content.ToString();
                                     if (!string.IsNullOrEmpty(content) && int.TryParse(content, out int value))
                                     {
                                         int newValue = value * 2;
@@ -450,39 +450,39 @@ namespace _2k48
                                         switch (newValue)
                                         {
                                             case 4:
-                                                field[i + 1, j].Content = Label4();
+                                                labels[i + 1, j].Content = Label4();
                                                 break;
                                             case 8:
-                                                field[i + 1, j].Content = Label8();
+                                                labels[i + 1, j].Content = Label8();
                                                 break;
                                             case 16:
-                                                field[i + 1, j].Content = Label16();
+                                                labels[i + 1, j].Content = Label16();
                                                 break;
                                             case 32:
-                                                field[i + 1, j].Content = Label32();
+                                                labels[i + 1, j].Content = Label32();
                                                 break;
                                             case 64:
-                                                field[i + 1, j].Content = Label64();
+                                                labels[i + 1, j].Content = Label64();
                                                 break;
                                             case 128:
-                                                field[i + 1, j].Content = Label128();
+                                                labels[i + 1, j].Content = Label128();
                                                 break;
                                             case 256:
-                                                field[i + 1, j].Content = Label256();
+                                                labels[i + 1, j].Content = Label256();
                                                 break;
                                             case 512:
-                                                field[i + 1, j].Content = Label512();
+                                                labels[i + 1, j].Content = Label512();
                                                 break;
                                             case 1024:
-                                                field[i + 1, j].Content = Label1024();
+                                                labels[i + 1, j].Content = Label1024();
                                                 break;
                                             case 2048:
-                                                field[i + 1, j].Content = Label2048();
+                                                labels[i + 1, j].Content = Label2048();
                                                 break;
                                             default:
                                                 break;
                                         }
-                                        field[i, j].Content = null;
+                                        labels[i, j].Content = null;
                                     }
 
                                 }
@@ -490,8 +490,8 @@ namespace _2k48
                             }
                             if (i + 1 < 4)
                             {
-                                field[i + 1, j].Content = field[i, j].Content;
-                                field[i, j].Content = null;
+                                labels[i + 1, j].Content = labels[i, j].Content;
+                                labels[i, j].Content = null;
                                 continue;
                             }
                         }
@@ -504,13 +504,13 @@ namespace _2k48
                 {
                     for (int j = 0; j < 4; j++)
                     {
-                        if (field[i, j].Content != null)
+                        if (labels[i, j].Content != null)
                         {
-                            if (i - 1 >= 0 && field[i - 1, j].Content != null)
+                            if (i - 1 >= 0 && labels[i - 1, j].Content != null)
                             {
-                                if (field[i - 1, j].Content.ToString() == field[i, j].Content.ToString())
+                                if (labels[i - 1, j].Content.ToString() == labels[i, j].Content.ToString())
                                 {
-                                    string content = (field[i, j].Content as Label)?.Content.ToString();
+                                    string content = (labels[i, j].Content as Label)?.Content.ToString();
                                     if (!string.IsNullOrEmpty(content) && int.TryParse(content, out int value))
                                     {
                                         int newValue = value * 2;
@@ -519,39 +519,39 @@ namespace _2k48
                                         switch (newValue)
                                         {
                                             case 4:
-                                                field[i - 1, j].Content = Label4();
+                                                labels[i - 1, j].Content = Label4();
                                                 break;
                                             case 8:
-                                                field[i - 1, j].Content = Label8();
+                                                labels[i - 1, j].Content = Label8();
                                                 break;
                                             case 16:
-                                                field[i - 1, j].Content = Label16();
+                                                labels[i - 1, j].Content = Label16();
                                                 break;
                                             case 32:
-                                                field[i - 1, j].Content = Label32();
+                                                labels[i - 1, j].Content = Label32();
                                                 break;
                                             case 64:
-                                                field[i - 1, j].Content = Label64();
+                                                labels[i - 1, j].Content = Label64();
                                                 break;
                                             case 128:
-                                                field[i - 1, j].Content = Label128();
+                                                labels[i - 1, j].Content = Label128();
                                                 break;
                                             case 256:
-                                                field[i - 1, j].Content = Label256();
+                                                labels[i - 1, j].Content = Label256();
                                                 break;
                                             case 512:
-                                                field[i - 1, j].Content = Label512();
+                                                labels[i - 1, j].Content = Label512();
                                                 break;
                                             case 1024:
-                                                field[i - 1, j].Content = Label1024();
+                                                labels[i - 1, j].Content = Label1024();
                                                 break;
                                             case 2048:
-                                                field[i - 1, j].Content = Label2048();
+                                                labels[i - 1, j].Content = Label2048();
                                                 break;
                                             default:
                                                 break;
                                         }
-                                        field[i, j].Content = null;
+                                        labels[i, j].Content = null;
                                     }
 
                                 }
@@ -559,8 +559,8 @@ namespace _2k48
                             }
                             if (i - 1 >= 0)
                             {
-                                field[i - 1, j].Content = field[i, j].Content;
-                                field[i, j].Content = null;
+                                labels[i - 1, j].Content = labels[i, j].Content;
+                                labels[i, j].Content = null;
                                 continue;
                             }
                         }
@@ -573,13 +573,13 @@ namespace _2k48
                 {
                     for (int j = 3; j >= 0; j--)
                     {
-                        if (field[i, j].Content != null)
+                        if (labels[i, j].Content != null)
                         {
-                            if (j - 1 >= 0 && field[i, j - 1].Content != null)
+                            if (j - 1 >= 0 && labels[i, j - 1].Content != null)
                             {
-                                if (field[i, j - 1].Content.ToString() == field[i, j].Content.ToString())
+                                if (labels[i, j - 1].Content.ToString() == labels[i, j].Content.ToString())
                                 {
-                                    string content = (field[i, j].Content as Label)?.Content.ToString();
+                                    string content = (labels[i, j].Content as Label)?.Content.ToString();
                                     if (!string.IsNullOrEmpty(content) && int.TryParse(content, out int value))
                                     {
                                         int newValue = value * 2;
@@ -588,39 +588,39 @@ namespace _2k48
                                         switch (newValue)
                                         {
                                             case 4:
-                                                field[i, j - 1].Content = Label4();
+                                                labels[i, j - 1].Content = Label4();
                                                 break;
                                             case 8:
-                                                field[i, j - 1].Content = Label8();
+                                                labels[i, j - 1].Content = Label8();
                                                 break;
                                             case 16:
-                                                field[i, j - 1].Content = Label16();
+                                                labels[i, j - 1].Content = Label16();
                                                 break;
                                             case 32:
-                                                field[i, j - 1].Content = Label32();
+                                                labels[i, j - 1].Content = Label32();
                                                 break;
                                             case 64:
-                                                field[i, j - 1].Content = Label64();
+                                                labels[i, j - 1].Content = Label64();
                                                 break;
                                             case 128:
-                                                field[i, j - 1].Content = Label128();
+                                                labels[i, j - 1].Content = Label128();
                                                 break;
                                             case 256:
-                                                field[i, j - 1].Content = Label256();
+                                                labels[i, j - 1].Content = Label256();
                                                 break;
                                             case 512:
-                                                field[i, j - 1].Content = Label512();
+                                                labels[i, j - 1].Content = Label512();
                                                 break;
                                             case 1024:
-                                                field[i, j - 1].Content = Label1024();
+                                                labels[i, j - 1].Content = Label1024();
                                                 break;
                                             case 2048:
-                                                field[i, j - 1].Content = Label2048();
+                                                labels[i, j - 1].Content = Label2048();
                                                 break;
                                             default:
                                                 break;
                                         }
-                                        field[i, j].Content = null;
+                                        labels[i, j].Content = null;
                                     }
 
                                 }
@@ -628,8 +628,8 @@ namespace _2k48
                             }
                             if (j - 1 >= 0)
                             {
-                                field[i, j - 1].Content = field[i, j].Content;
-                                field[i, j].Content = null;
+                                labels[i, j - 1].Content = labels[i, j].Content;
+                                labels[i, j].Content = null;
                                 continue;
                             }
                         }
@@ -661,11 +661,16 @@ namespace _2k48
             {
                 for (int j = 0; j < 4; j++)
                 {
-                    field[i, j].Content = null;
+                    labels[i, j].Content = null;
                 }
             }
             SpawnLabel();
             Score.Text = "0";
+        }
+
+        private void Help(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("Use WASD to move! Try to get the biggest score in the universe", "HELP");
         }
     }
 }

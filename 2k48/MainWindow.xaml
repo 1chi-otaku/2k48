@@ -24,6 +24,7 @@
 
         <Menu>
             <MenuItem Header="New Game" Click="Restart" FontSize="12" Background="White" Foreground="Black" />
+            <MenuItem Header="Help" Click="Help" FontSize="12" Background="White" Foreground="Black" />
         </Menu>
 
         <Grid Grid.Row="1" Margin="5,20,5,5">
