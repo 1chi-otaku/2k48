@@ -21,14 +21,14 @@ namespace _2k48
     public partial class MainWindow : Window
     {
         Label[,] labels;
-        string hs;
+        string readscore;
         public MainWindow()
         {
             InitializeComponent();
             using (StreamReader filestream = new StreamReader("highscore.txt"))
             {
-                hs = filestream.ReadToEnd();
-                highscore.Text = hs;
+                readscore = filestream.ReadToEnd();
+                highscore.Text = readscore;
             }
             labels = new Label[4, 4];
             InitField();
@@ -645,12 +645,12 @@ namespace _2k48
 
         private void HS_Check(object sender, EventArgs e)
         {
-            if (Convert.ToInt32(highscore.Text) > Convert.ToInt32(hs))
+            if (Convert.ToInt32(highscore.Text) > Convert.ToInt32(readscore))
             {
                 using (StreamWriter sw = new StreamWriter("highscore.txt", false))
                 {
-                    hs = highscore.Text;
-                    sw.Write(hs);
+                    readscore = highscore.Text;
+                    sw.Write(readscore);
                 }
             }
         }
